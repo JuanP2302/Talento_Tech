@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/favicon.ico')}}" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic," rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/styles.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/style1.css')}}" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" />
+    <title>Energía renovable</title>
+   </head>
+    <body id="page-top">
+      <nav class="navbar navbar-expand-lg bg-primary text-uppercase fixed-top" id="mainNav">
+          <div class="container">
+              <a class="navbar-brand" href="#page-top" >Energia Renovable</a>
+              <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" >
+                  Menu
+                  <i class="fas fa-bars"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarResponsive">
+                  <ul class="navbar-nav ms-auto">
+                      <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#dashboard">Dashboard</a></li>
+                      <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#estimador">Estimador de Energía Renovable</a></li>
+                      <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#cargar">Información Historica</a></li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{{url_for('static', filename='assets/imagenes/1.png')}}" class="d-block w-100">
+      </div>
+      <div class="carousel-item">
+        <img src="{{url_for('static', filename='assets/imagenes/2.png')}}" class="d-block w-100">
+      </div>
+      <div class="carousel-item">
+        <img src="{{url_for('static', filename='assets/imagenes/3.png')}}" class="d-block w-100">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <br />
+  <br />
+  <div class="imagenes">
+    
+    <!-- Button trigger modal -->
+<a href="#" data-bs-toggle="modal" data-bs-target="#model1">
+  <img class="imgs" src="{{url_for('static', filename='assets/imagenes/ENERGIA_EOLICA.png')}}"/>
+</a>
+
+<!-- Modal -->
+<div class="modal fade" id="model1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <center class="text-uppercase">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Energía Eólica: Potencia del Viento para un Futuro Sostenible</h1>
+        </center>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <center class="text-uppercase">¿Qué es la energía eólica?</center>
+        La energía eólica es una fuente de energía renovable que utiliza la fuerza del viento para generar electricidad. A través de turbinas eólicas, el movimiento del aire se convierte en energía mecánica y luego en energía eléctrica, ofreciendo una solución sostenible y limpia frente a los combustibles fósiles. <br> <br>
+        <center class="text-uppercase text">¿Cómo funciona la energía eólica?</center>
+        1.Captación del viento: Las turbinas eólicas, que constan de aspas largas conectadas a un rotor, capturan la energía cinética del viento. <br>
+        2.Conversión de energía: El rotor gira con el viento, moviendo un generador que convierte la energía mecánica en electricidad. <br>
+        3.Distribución: La electricidad generada se conecta a redes eléctricas o se almacena en sistemas de baterías para su uso posterior. <br> <br>
+        <center class="text-uppercase">Ventajas de la energía eólica</center>
+        1.Energía limpia: No genera emisiones de gases de efecto invernadero durante su funcionamiento. <br>
+        2.Inagotable: Aprovecha un recurso natural que nunca se agota: el viento. <br>
+        3.Bajo costo operativo: Aunque la instalación inicial puede ser alta, el mantenimiento y operación son relativamente económicos. <br>
+        4.Compatibilidad con otros usos del suelo: Las turbinas pueden instalarse en áreas agrícolas, permitiendo usos compartidos del terreno. <br> <br>
+        <center class="text-uppercase">Tipos de turbinas eólicas</center>
+        1.Turbinas terrestres: Instaladas en tierra firme, comúnmente en zonas rurales o montañosas con vientos consistentes. <br>
+        2.Turbinas marinas: Situadas en el mar, donde los vientos son más fuertes y constantes, lo que permite generar más energía. <br>
+        3.Turbinas de eje horizontal y vertical: La mayoría son de eje horizontal, pero las de eje vertical son ideales para espacios más reducidos. <br> <br>
+        <center class="text-uppercase">La energía eólica en el mundo</center>
+        La energía eólica es una de las formas de energía renovable de más rápido crecimiento. Países como China, Estados Unidos, y Alemania lideran en capacidad instalada, mientras que regiones emergentes están adoptando esta tecnología para diversificar sus fuentes de energía. <br> <br>
+        <center class="text-uppercase">El futuro de la energía eólica</center>
+        Con avances en tecnología, como turbinas más eficientes y sistemas de almacenamiento de energía, la energía eólica está destinada a jugar un papel clave en la transición hacia un sistema energético global sostenible. La expansión de los parques eólicos marinos y la integración de turbinas en áreas urbanas son tendencias prometedoras. <br> <br>
+        <center class="text-uppercase">Conclusión</center>
+        La energía eólica representa una oportunidad única para reducir la dependencia de los combustibles fósiles y combatir el cambio climático. Su crecimiento global destaca la importancia de invertir en fuentes limpias para asegurar un futuro energético sostenible y resiliente.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+   <!-- Button trigger modal -->
+<a href="#" data-bs-toggle="modal" data-bs-target="#modal2">
+  <img class="imgs2" src="{{url_for('static', filename='assets/imagenes/ENERGIA_SOLAR.png')}}" />
+</a>
+
+<!-- Modal -->
+<div class="modal fade" id="modal2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <center class="text-uppercase">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Energía Solar: La Fuerza del Sol al Servicio de la Sostenibilidad</h1>
+        </center>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <center class="text-uppercase">¿Qué es la energía solar?</center>
+        La energía solar es una fuente de energía renovable que aprovecha la radiación del sol para generar electricidad o calor. Es una de las soluciones más limpias y abundantes para satisfacer las necesidades energéticas del mundo sin causar daño al medio ambiente. <br> <br>
+        <center class="text-uppercase text">¿Cómo funciona la energía solar?</center>
+        1.Captación de luz solar: Los paneles solares, equipados con células fotovoltaicas, capturan la energía de la radiación solar. <br>
+        2.Conversión de energía: Las células fotovoltaicas transforman la energía solar en electricidad en forma de corriente continua (CC). <br>
+        3.Uso o almacenamiento: Un inversor convierte la corriente continua en corriente alterna (CA), lista para ser utilizada en hogares, empresas o almacenada en baterías para uso posterior. <br> <br>
+        <center class="text-uppercase">Tipos de energía solar</center>
+        1.Energía solar fotovoltaica: Genera electricidad mediante paneles solares que capturan la luz del sol. <br>
+        2.Energía solar térmica: Aprovecha el calor del sol para calentar agua o espacios, utilizada en sistemas domésticos o industriales. <br>
+        3.Energía solar termoeléctrica (CSP): Utiliza espejos para concentrar la luz solar y producir vapor que mueve turbinas para generar electricidad. <br> <br>
+        <center class="text-uppercase">Ventajas de la energía solar</center>
+        1.Energía limpia y renovable: No genera emisiones de carbono ni contaminación durante su uso. <br>
+        2.Disponibilidad global: El sol brilla en casi todo el planeta, proporcionando un recurso accesible y constante. <br>
+        3.Ahorro económico: Reduce los costos de electricidad a largo plazo y puede generar ingresos mediante la venta de excedentes energéticos. <br>
+        4.Bajo mantenimiento: Los sistemas solares requieren poco mantenimiento una vez instalados. <br> <br>
+        <center class="text-uppercase">Aplicaciones de la energía solar</center>
+        1.Hogares: Paneles solares para abastecer la energía de casas, calentadores solares de agua y sistemas de iluminación. <br>
+        2.Empresas: Parques solares que suministran energía a grandes instalaciones comerciales e industriales. <br>
+        3.Movilidad: Carga de vehículos eléctricos y alimentación de dispositivos móviles con energía solar. <br> 
+        4.Comunidades aisladas: Sistemas solares fuera de la red eléctrica para áreas remotas sin acceso a electricidad convencional. <br> <br>
+        <center class="text-uppercase">La energía solar en el mundo</center>
+        La energía solar está liderando la transición hacia un modelo energético sostenible. Países como China, Estados Unidos, e India son pioneros en instalaciones solares, mientras que regiones como América Latina y África están aprovechando su alto potencial solar para transformar sus economías. <br> <br>
+        <center class="text-uppercase">El futuro de la energía solar</center>
+        El desarrollo de tecnologías más avanzadas, como paneles más eficientes y sistemas de almacenamiento más económicos, promete un futuro brillante para la energía solar. La integración de la energía solar en infraestructuras urbanas, como edificios inteligentes y carreteras solares, está marcando el camino hacia ciudades sostenibles. <br> <br>
+        <center class="text-uppercase">Conclusión</center>
+        La energía solar es una herramienta clave para combatir el cambio climático, reducir la dependencia de combustibles fósiles y construir un mundo más limpio y sostenible. Con su potencial ilimitado, esta fuente renovable está iluminando el camino hacia un futuro energético más verde y responsable.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+   <!-- Button trigger modal -->
+<a href="#" data-bs-toggle="modal" data-bs-target="#modal3">
+  <img class="imgs3" src="{{url_for('static', filename='assets/imagenes/hidroelectrica.png')}}" />
+</a>
+
+<!-- Modal -->
+<div class="modal fade" id="modal3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <center class="text-uppercase">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Energía Hidroeléctrica: El Poder del Agua en Movimiento</h1>
+        </center>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <center class="text-uppercase">¿Qué es la energía hidroeléctrica?</center>
+        La energía hidroeléctrica es una fuente de energía renovable que utiliza el movimiento del agua para generar electricidad. Es una de las formas más antiguas de energía aprovechada por el ser humano y sigue siendo una de las principales fuentes de energía renovable en el mundo. <br> <br>
+        <center class="text-uppercase text">¿Cómo funciona la energía hidroeléctrica?</center>
+        1.Captación del agua: El agua de ríos, embalses o corrientes naturales se dirige hacia una central hidroeléctrica. <br>
+        2.Generación de energía: La fuerza del agua mueve las turbinas conectadas a generadores, que convierten la energía mecánica en electricidad. <br>
+        3.Distribución: La electricidad generada se envía a través de redes eléctricas para su consumo en hogares, industrias y comunidades. <br> <br>
+        <center class="text-uppercase">Tipos de energía hidroeléctrica</center>
+        1.Grandes centrales hidroeléctricas: Requieren embalses y represas para regular el flujo de agua y generar grandes cantidades de energía. <br>
+        2.Mini y microhidroeléctricas: Instalaciones pequeñas ideales para comunidades rurales o regiones remotas. <br>
+        3.Centrales de pasada: Aprovechan el flujo natural del agua sin necesidad de grandes represas. <br> <br>
+        <center class="text-uppercase">Ventajas de la energía hidroeléctrica</center>
+        1.Energía limpia: No genera emisiones de gases de efecto invernadero durante su operación. <br>
+        2.Renovable: Utiliza un recurso natural que se renueva constantemente: el agua. <br>
+        3.Capacidad de almacenamiento: Los embalses permiten almacenar energía y regular la producción según la demanda. <br>
+        4.Estabilidad energética: Proporciona una fuente confiable y constante de electricidad, especialmente en regiones con abundancia de agua. <br> <br>
+        <center class="text-uppercase">Aplicaciones de la energía hidroeléctrica</center>
+        1.Generación masiva: Abastece grandes áreas urbanas e industrias. <br>
+        2.Energía descentralizada: Minihidroeléctricas para comunidades rurales que no están conectadas a la red eléctrica principal.<br>
+        3.Riego y control de inundaciones: Los embalses asociados a las centrales hidroeléctricas también se utilizan para almacenar agua de riego y controlar inundaciones. <br> <br>
+        <center class="text-uppercase">La energía hidroeléctrica en el mundo</center>
+        Países como China, Brasil, Canadá y Noruega lideran en la generación de energía hidroeléctrica a nivel global. En muchas regiones, esta fuente representa más del 50% de su energía total, destacándose como una solución estratégica para mitigar el cambio climático. <br> <br>
+        <center class="text-uppercase">El futuro de la energía hidroeléctrica</center>
+        La modernización de infraestructuras existentes y el desarrollo de proyectos sostenibles, como centrales de pasada y tecnologías para minimizar el impacto ambiental, están asegurando que la energía hidroeléctrica siga siendo un pilar clave en la transición energética global. <br> <br>
+        <center class="text-uppercase">Conclusión</center>
+        La energía hidroeléctrica combina tradición e innovación, utilizando la fuerza del agua para generar electricidad de manera limpia y renovable. Si se gestiona de manera responsable, esta fuente de energía puede seguir siendo un pilar fundamental para un sistema energético sostenible que beneficie a las generaciones presentes y futuras.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+       <!-- Button trigger modal -->
+<a href="#" data-bs-toggle="modal" data-bs-target="#modal4">
+  <img class="imgs4" src="{{url_for('static', filename='assets/imagenes/geotermica.png')}}" />
+</a>
+
+<!-- Modal -->
+<div class="modal fade" id="modal4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <center class="text-uppercase">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Energía Geotérmica: El Calor de la Tierra al Servicio del Futuro</h1>
+        </center>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <center class="text-uppercase">¿Qué es la energía geotérmica?</center>
+        La energía geotérmica es una fuente de energía renovable que aprovecha el calor almacenado en el interior de la Tierra. Este calor, generado por la descomposición de elementos radiactivos y el calor residual del núcleo terrestre, se utiliza para generar electricidad o calefacción. <br> <br>
+        <center class="text-uppercase text">¿Cómo funciona la energía geotérmica?</center>
+        1.Extracción del calor: El calor se extrae a través de pozos perforados en el subsuelo, donde se encuentra agua o vapor caliente en reservorios geotérmicos. <br>
+        2.Generación de energía: El vapor o agua caliente impulsa turbinas conectadas a generadores eléctricos. <br>
+        3.Uso directo o reinyección: El agua enfriada se reutiliza en sistemas de calefacción o se reinyecta al suelo para mantener el equilibrio del reservorio. <br> <br>
+        <center class="text-uppercase">Tipos de sistemas geotérmicos</center>
+        1.Centrales geotérmicas: Instalaciones que generan electricidad aprovechando altas temperaturas subterráneas. <br>
+          -Sistemas de vapor seco: Usan directamente el vapor subterráneo para mover turbinas. <br>
+          -Sistemas de vapor flash: Convierten agua caliente en vapor para generar electricidad. <br>
+          -Sistemas de ciclo binario: Utilizan intercambiadores de calor para convertir el calor en vapor de un fluido secundario. <br>
+        2.Uso directo: Sistemas para calefacción, agua caliente sanitaria y procesos industriales. <br>
+        3.Bomba de calor geotérmica: Extraen el calor del subsuelo a bajas profundidades para climatización en hogares y edificios. <br> <br>
+        <center class="text-uppercase">Ventajas de la energía geotérmica</center>
+        1.Energía limpia y renovable: Produce emisiones mínimas de carbono y utiliza un recurso inagotable. <br>
+        2.Fiabilidad: Proporciona una fuente constante de energía, independientemente del clima o la hora del día. <br>
+        3.Versatilidad: Puede utilizarse para generar electricidad, calefacción y refrigeración. <br>
+        4.Eficiencia: Las bombas de calor geotérmicas son significativamente más eficientes que los sistemas convencionales de climatización. <br> <br>
+        <center class="text-uppercase">Aplicaciones de la energía geotérmica</center>
+        1.Generación eléctrica: A través de centrales geotérmicas, ideales para zonas con alta actividad térmica subterránea. <br>
+        2.Calefacción urbana: Redes de calor que abastecen ciudades o barrios completos.<br>
+        3.Climatización doméstica: Bombas de calor geotérmicas para hogares y edificios comerciales. <br> 
+        4.Procesos industriales: Uso directo del calor en procesos como secado de alimentos, piscicultura y balnearios termales. <br> <br>
+        <center class="text-uppercase">La energía geotérmica en el mundo</center>
+        Países como Islandia, Nueva Zelanda, Filipinas y Estados Unidos lideran el uso de la energía geotérmica. Islandia, por ejemplo, genera más del 25% de su electricidad a partir de fuentes geotérmicas y calienta la mayoría de sus hogares con este recurso. <br> <br>
+        <center class="text-uppercase">El futuro de la energía geotérmica</center>
+        El desarrollo de tecnologías avanzadas, como los sistemas de perforación profunda y la mejora en la eficiencia de las centrales, está ampliando el alcance de la energía geotérmica. Además, su combinación con otras energías renovables refuerza su papel en la transición energética global. <br> <br>
+        <center class="text-uppercase">Conclusión</center>
+        La energía geotérmica es una solución renovable que aprovecha el calor natural de la Tierra para generar energía limpia y sostenible. Con su potencial para suministrar electricidad y calor constante, esta fuente energética es un pilar importante en la lucha contra el cambio climático y la transición hacia un sistema energético más verde.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+  </div>
+    <header class="masthead text-black text-center">
+      <div class="container d-flex align-items-center flex-column">
+          <img class="masthead-avatar mb-5" src="{{url_for('static', filename='assets/img/logo.png')}}" style="height: 400px; width: 500px;"/>
+          <h1 class="masthead-heading text-uppercase mb-0">Energía Renovable</h1>
+          <div class="divider-custom divider-light">
+              <div class="divider-custom-line"></div>
+              <div class="divider-custom-icon"><i class="fas fa-fan"></i></div>
+              <div class="divider-custom-line"></div>
+          </div>
+          <p class="masthead-subheading font-weight-light mb-0">"Aprovechamos la fuerza del sol, el movimiento del viento, el flujo del 
+            agua y el calor de la Tierra para transformar la energía en soluciones limpias, sostenibles y renovables que impulsan un futuro más verde para todos."</p>
+      </div>
+  </header>
+  <section class="page-section dashboard bg-primary" id="dashboard">
+      <div class="container">
+          <h2 class="page-section-heading text-center text-uppercase text-black mb-0">Dashboard</h2>
+          <div class="divider-custom">
+              <div class="divider-custom-line"></div>
+              <div class="divider-custom-icon"><i class="fas fa-solar-panel"></i></div>
+              <div class="divider-custom-line"></div>
+          </div>
+          <div class="row justify-content-center">
+              <div class="col-md-6 col-lg-6 mb-5">
+                  <div class="dashboard-item mx-auto">
+                      <img src="data:image/png;base64,{{ graph_url }}" alt="Grafico de barras" width="100%" height="100%" />
+                  </div>
+              </div>
+              <div class="col-md-6 col-lg-6 mb-5">
+                  <div class="dashboard-item mx-auto">
+                    <img src="data:image/png;base64,{{ graph_url2 }}" alt="Grafico de Torta" width="107%" height="95%" />
+                  </div>
+              </div>
+              <div class="col-md-6 col-lg-6 mb-5">
+                  <div class="dashboard-item mx-auto">
+                    <img src="data:image/png;base64,{{ graph_url3 }}" alt="Grafico de Lineas" width="100%" height="100%" />
+                  </div>
+              </div>
+              <div class="col-md-6 col-lg-6 mb-5 mb-lg-0">
+                  <div class="dashboard-item mx-auto">
+                    <img src="data:image/png;base64,{{ graph_url4 }}" alt="Grafico de Area" width="100%" height="100%" />
+                  </div>
+          </div>
+      </div>
+  </section>
+  <section class="page-section bg-primary text-white mb-0" id="estimador">
+      <div class="container">
+          <h2 class="page-section-heading text-center text-uppercase text-white">Estimador de energía renovable en el consumo eléctrico</h2>
+          <div class="divider-custom divider-light">
+              <div class="divider-custom-line"></div>
+              <div class="divider-custom-icon"><i class="fas fa-lightbulb"></i></div>
+              <div class="divider-custom-line"></div>
+          </div>
+          <form method="POST">
+              <div class="row">
+                  <div class="row justify-content-center">
+                      <div class="col-lg-8 col-xl-7">
+                          <div class="form-floating mb-3">
+                              <input class="form-control" id="consumo_total" name="consumo_total" type="text" required />
+                              <label for="consumo_total">Consumo total (Kwh)</label>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-7 mb-3">
+                    {% if porcentaje_renovable is not none %}
+                        <div class="resultado">
+                            <h4><span class="badge text-bg-success"><i class="fas fa-solar-panel"></i> El porcentaje de energia renovable consumido es de: {{porcentaje_renovable | round (2)}} %</span></h4>
+                        </div>
+                    {% elif error %}
+                        <div class="error">
+                            <h4><span class="badge text-bg-danger">{{error}}</span></h4>
+                        </div>
+                    {% endif %}
+                </div>
+              </div>
+              <div class="text-center mt-4">
+                  <button class="btn btn-xl btn-outline-light"><i class="fas fa-plug me-2"></i> Cancular</button>
+              </div>
+          </form> <br>
+          <div class="row justify-content-center">
+              <img src="{{url_for('static', filename='assets/img/formula.png')}}" width="50%" height="50%" />
+          </div>
+      </div>
+  </section>
+  <section class="page-section" id="cargar">
+    <div class="container">
+          <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Información Sobre Energía Renovable de Sur America</h2>
+          <div class="divider-custom">
+              <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon"><i class="fas fa-plug-circle-plus"></i></div>
+              <div class="divider-custom-line"></div>
+          </div>
+          <div class="row justify-content-center">
+              <div class="col-lg-8 col-xl-7">
+                  <table id="tabla_datos" class="display">
+                    <thead>
+                      <tr>
+                        <th>Entidad</th>
+                        <th>Código</th>
+                        <th>Año</th>
+                        <th>Renovables (% energía primaria equivalente)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for fila in data %}
+                          <tr>
+                            <td>{{ fila[0] }}</td>
+                            <td>{{ fila[1] }}</td>
+                            <td>{{ fila[2] }}</td>
+                            <td>{{ fila[3] }}</td>
+                          </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+              </div>
+          </div>
+    </div>
+  </section>
+  <footer class="footer text-center">
+    <div class="container">
+        <div class="row">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+            <img src="{{url_for('static', filename='assets/imagenes/logociaf (2).png')}}" class="d-block mx-auto img-fluid" alt="logo-ciaf" style="height: auto; object-fit: cover;" />
+        </div>
+        <div class="col-lg-4 mb-5 mb-lg-0"> <br> <br> <br> <br> <br>
+            <h4 class="text-uppercase mb-4">Juan Pablo <br> Castañeda Cifuentes</h4>
+            <h4 class="text-uppercase mb-4" >Juan Jose <br> Solarte Castaño </h4>
+        </div>
+        <div class="col-lg-4">
+            <img src="{{url_for('static', filename='assets/imagenes/logo_tech.png')}}" class="d-block mx-auto img-fluid" alt="logo-ciaf" style="height: auto; object-fit: cover;" />
+        </div>
+        </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{{url_for('static', filename='js/scripts.js')}}" ></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        $('#tabla_datos').DataTable();
+    });
+  </script>
+</html>
+    
