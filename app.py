@@ -28,10 +28,10 @@ def cargar_datos_renovables(ruta_csv):
         print(f"Error al leer el archivo CSV: {e}")
     return datos
 
-RUTA_CSV = 'Website/static/archivo/data.csv'
+RUTA_CSV = 'static/archivo/data.csv'
 datos_renovables = cargar_datos_renovables(RUTA_CSV)
 
-DATA_DIR ="Website/static/archivo"
+DATA_DIR ="static/archivo"
 FILES = {
     "Wind": ("08 wind-generation.csv","Electricity from wind (TWh)"),
     "Solar": ("12 solar-energy-consumption.csv","Electricity from solar (TWh)"),
@@ -160,7 +160,7 @@ def index():
     plt.close()
     #---------------------------------------------
     
-    with open('Website/static/archivo/data_pagina.csv', newline='', encoding='utf-8') as csvfile:
+    with open('static/archivo/data_pagina.csv', newline='', encoding='utf-8') as csvfile:
         leer = csv.reader(csvfile)
         data = [row for row in leer]
     
